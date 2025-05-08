@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        /* Light mode - warm coral theme */
+        --background: 30 100% 98%;
+        --foreground: 30 10% 10%;
+        --muted: 30 10% 90%;
+        --muted-foreground: 30 10% 40%;
+        --popover: 30 100% 98%;
+        --popover-foreground: 30 10% 10%;
+        --card: 30 100% 98%;
+        --card-foreground: 30 10% 10%;
+        --border: 30 10% 90%;
+        --input: 30 10% 90%;
+
+        /* Primary: Coral */
+        --primary: 16 90% 60%;
+        --primary-foreground: 16 100% 97%;
+
+        /* Secondary: Teal */
+        --secondary: 174 60% 40%;
+        --secondary-foreground: 174 100% 97%;
+
+        /* Accent: Amber */
+        --accent: 38 90% 50%;
+        --accent-foreground: 38 100% 97%;
+
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+
+        --ring: 16 90% 60%;
+
+        /* Chart colors */
+        --chart-1: 16 90% 60%;
+        --chart-2: 174 60% 40%;
+        --chart-3: 38 90% 50%;
+        --chart-4: 330 65% 50%;
+        --chart-5: 200 60% 50%;
+
+        --radius: 0.5rem;
+    }
+
+    .dark {
+        /* Dark mode - cool purple theme */
+        --background: 250 20% 8%;
+        --foreground: 250 10% 98%;
+        --muted: 250 15% 18%;
+        --muted-foreground: 250 10% 70%;
+        --popover: 250 20% 8%;
+        --popover-foreground: 250 10% 98%;
+        --card: 250 20% 10%;
+        --card-foreground: 250 10% 98%;
+        --border: 250 15% 20%;
+        --input: 250 15% 20%;
+
+        /* Primary: Vibrant Purple */
+        --primary: 265 80% 65%;
+        --primary-foreground: 265 10% 100%;
+
+        /* Secondary: Cyan */
+        --secondary: 190 95% 45%;
+        --secondary-foreground: 190 10% 100%;
+
+        /* Accent: Mint green */
+        --accent: 150 80% 50%;
+        --accent-foreground: 150 10% 8%;
+
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+
+        --ring: 265 80% 65%;
+
+        /* Chart colors */
+        --chart-1: 265 80% 65%;
+        --chart-2: 190 95% 45%;
+        --chart-3: 150 80% 50%;
+        --chart-4: 316 70% 60%;
+        --chart-5: 29 90% 60%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
