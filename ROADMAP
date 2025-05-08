@@ -1,0 +1,5 @@
+Add CI/CD so every time I merge to master I can deploy to production.
+
+Add a test suite to make sure everything works as expected.
+
+ADD README.md

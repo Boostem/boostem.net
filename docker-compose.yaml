@@ -1,0 +1,43 @@
+services:
+  nginx:
+    image: nginx:latest
+    container_name: boostem-ui
+    ports:
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/error_pages:/usr/share/nginx/error_pages
+      - ./web/dist:/usr/share/nginx/html
+      - ./nginx/certs:/etc/nginx/certs
+    restart: unless-stopped
+
+  api:
+    image: boostem/api:0.0.1-SNAPSHOT
+    container_name: boostem-api
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/boostem
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:16
+    container_name: boostem-db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=boostem
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./database/boostem-schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
+      - ./database/boostem-data.sql:/docker-entrypoint-initdb.d/02-data.sql
+      - postgres-data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  postgres-data:
