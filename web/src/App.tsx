@@ -2,7 +2,7 @@ import Layout from './components/Layout'
 import Home from './pages/Home'
 import About from './pages/about/About'
 import Projects from './pages/projects/Projects'
-import Resume from './pages/Resume'
+import Resume from './pages/resume/Resume'
 import { Route, Routes } from 'react-router-dom'
 
 const App = () => {

@@ -32,7 +32,7 @@ export const ProjectItem = ({ id, title, description, image, tags, demoUrl, repo
                         <span
                             key={tag.id}
                             className="px-2 py-1 bg-neutral-100 dark:bg-neutral-800 text-xs rounded-md"
-                        >
+>
                             {tag.name}
                         </span>
                     ))}
