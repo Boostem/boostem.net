@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { Button } from "../../components/ui/button";
 
-export const Intro = () => (
+export const Intro = () => {
+    return (
     <div>
         <h2 className="text-2xl font-semibold mb-4">Hi, I'm boostem</h2>
         <p className="text-lg mb-4">
@@ -26,4 +27,5 @@ export const Intro = () => (
             </Button>
         </div>
     </div>
-);
+    )
+}
