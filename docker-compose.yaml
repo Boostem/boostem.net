@@ -12,7 +12,7 @@ services:
     restart: unless-stopped
 
   api:
-    image: boostem/api:0.0.1-SNAPSHOT
+    image: boostem/api:0.0.1-SNAPSHOT-aarch64
     container_name: boostem-api
     ports:
       - "8080:8080"
